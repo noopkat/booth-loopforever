@@ -6,31 +6,50 @@
 	};
 
 	var mediaElement = document.getElementById('yesss');
- 
-	var recordRTC;
+	var capture = document.getElementById('capture');
+	var video = document.getElementById('vid');
+	var recordRTC, options;
 	 
 	navigator.getUserMedia(session, function(mediaStream) {
 
-	 	var options = {
+		video.src = window.URL.createObjectURL(mediaStream);
+		video.play();
+
+	 	options = {
 		   type: 'gif',
-		   frameRate: 200,
+		   frameRate: 100,
 		   quality: 10
 		};
 
-		var recordRTC = RecordRTC(mediaStream, options);
+		recordRTC = RecordRTC(mediaStream, options);
 
-		recordRTC.startRecording();
+		capture.addEventListener('click', function(e) {
 
-		setTimeout(stopAndShow, 3000);
+			e.target.style.display = 'none';
+			video.style.display = 'block';
+			mediaElement.style.display = 'none';
 
-		function stopAndShow() {
+			recordRTC.startRecording();
 
-			recordRTC.stopRecording(function(gifURL) {
-		   		mediaElement.src = gifURL;
-		   		console.log(gifURL)
-				});
-			}
+			setTimeout(stopAndShow, 2000);
 
-		}, function() { /* do error handling in here eventually */ });
+			function stopAndShow() {
+
+				recordRTC.stopRecording(function(gifURL) {
+
+			   		mediaElement.src = gifURL;
+			   		console.log(gifURL);
+
+			   		video.style.display = 'none';
+			   		e.target.style.display = 'block';
+			   		mediaElement.style.display = 'block';
+
+					});
+
+				}
+
+			});
+
+			}, function() { /* do error handling in here eventually */ });
 
 })();

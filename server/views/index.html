@@ -4,13 +4,20 @@
     <title>Booth</title>
   </head>
   <body>
-    {{stuff}}
 
-    <div>
-      <img src="" id="yesss" />
-    </div>
+    <p>Click 'Capture!' to begin.</p>
+
+    <div><video id="vid" width="320"></video></div>
+    <div><img src="" id="yesss" /></div>
+    <div><a href="#" id="capture">Capture!</a></div>
+
+    <p>{{stuff}}<p>
+
+
+    <script src="/js/RecordRTC.min.js"></script>
+    <script src="/js/gif-recorder.min.js"></script>
+    <script src="/js/index.js"></script>
+
   </body>
-  <script src="/js/RecordRTC.js"></script>
-  <script src="/js/gif-recorder.js"></script>
-  <script src="/js/index.js"></script>
+  
 </html>
