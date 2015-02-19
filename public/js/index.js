@@ -25,6 +25,8 @@
 
 		capture.addEventListener('click', function(e) {
 
+			e.preventDefault;
+
 			e.target.style.opacity = 0;
 			video.style.display = 'inline-block';
 			mediaElement.style.display = 'none';
