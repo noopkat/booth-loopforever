@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/noopkat/booth-loopforever/issues"
   },
-  "homepage": "https://github.com/noopkat/booth-loopforever"
+  "homepage": "https://github.com/noopkat/booth-loopforever",
+  "dependencies": {
+    "handlebars": "^3.0.0",
+    "hapi": "^8.2.0",
+    "require-directory": "^2.0.0"
+  }
 }
