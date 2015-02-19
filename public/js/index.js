@@ -25,8 +25,8 @@
 
 		capture.addEventListener('click', function(e) {
 
-			e.target.style.display = 'none';
-			video.style.display = 'block';
+			e.target.style.opacity = 0;
+			video.style.display = 'inline-block';
 			mediaElement.style.display = 'none';
 
 			recordRTC.startRecording();
@@ -40,8 +40,8 @@
 			   		mediaElement.src = gifURL;
 
 			   		video.style.display = 'none';
-			   		e.target.style.display = 'block';
-			   		mediaElement.style.display = 'block';
+			   		e.target.style.opacity = 1;
+			   		mediaElement.style.display = 'inline-block';
 
 					});
 
