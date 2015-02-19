@@ -38,7 +38,6 @@
 				recordRTC.stopRecording(function(gifURL) {
 
 			   		mediaElement.src = gifURL;
-			   		console.log(gifURL);
 
 			   		video.style.display = 'none';
 			   		e.target.style.display = 'block';
