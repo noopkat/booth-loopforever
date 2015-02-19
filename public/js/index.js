@@ -24,9 +24,7 @@
     recordRTC = RecordRTC(mediaStream, options);
 
     capture.addEventListener('click', function(e) {
-
       e.preventDefault();
-
       e.target.style.opacity = 0;
       video.style.display = 'inline-block';
       mediaElement.style.display = 'none';
@@ -36,21 +34,16 @@
       setTimeout(stopAndShow, 2000);
 
       function stopAndShow() {
-
         recordRTC.stopRecording(function(gifURL) {
-
             mediaElement.src = gifURL;
-
             mediaElement.style.display = 'inline-block';
             e.target.style.opacity = 1;
             video.style.display = 'none';
+        });
+      }
 
-          });
+    });
 
-        }
-
-      });
-
-      }, function() { /* do error handling in here eventually */ });
+  }, function() { /* do error handling in here eventually */ });
 
 })();
