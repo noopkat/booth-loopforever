@@ -1,3 +1,3 @@
 module.exports = function(request, reply) {
-	reply('Hello, world! ABOUT.');
+  reply('there is nothing to see here.');
 };
