@@ -35,10 +35,10 @@
 
       function stopAndShow() {
         recordRTC.stopRecording(function(gifURL) {
-            mediaElement.src = gifURL;
-            mediaElement.style.display = 'inline-block';
-            e.target.style.opacity = 1;
-            video.style.display = 'none';
+          mediaElement.src = gifURL;
+          mediaElement.style.display = 'inline-block';
+          e.target.style.opacity = 1;
+          video.style.display = 'none';
         });
       }
 

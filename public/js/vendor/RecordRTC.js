@@ -2841,6 +2841,8 @@ function GifRecorder(mediaStream) {
         gifEncoder.start();
 
         startTime = Date.now();
+        var skipFrames = 2;
+        var currentFrame = 0;
 
         var self = this;
 
@@ -2874,7 +2876,10 @@ function GifRecorder(mediaStream) {
                 self.onGifPreview(canvas.toDataURL('image/png'));
             }
 
-            gifEncoder.addFrame(context);
+            if (currentFrame > skipFrames) {
+                gifEncoder.addFrame(context);
+            }
+            currentFrame++;
             lastFrameTime = time;
         }
 
